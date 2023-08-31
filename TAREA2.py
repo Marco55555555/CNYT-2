@@ -35,20 +35,20 @@ def SumV(Data1,Data2):
     res=[]
     if len(Data1)==len(Data2):
         for i in range(len(Data1)):
-            res.append(Bas.sum(Data1[i],Data2[i]))
+            res.append(sum(Data1[i],Data2[i]))
         return res
     else: return res
 
 def InvV(Data1):
     res=[]
     for i in range(len(Data1)):
-        res.append(Bas.pro(Data1[i],(-1,0)))
+        res.append(pro(Data1[i],(-1,0)))
     return res
 
 def eVec(Escalar,Data1):
     res=[]
     for i in range(len(Data1)):
-        res.append(Bas.pro(Data1[i],Escalar))
+        res.append(pro(Data1[i],Escalar))
     return res
 
 def SumM(Data1,Data2):
