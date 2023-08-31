@@ -57,7 +57,7 @@ def SumM(Data1,Data2):
         for i in range(len(Data1)):
             columna=[]
             for j in range(len(Data1[i])):
-                columna.append(Bas.sum(Data1[i][j],Data2[i][j]))
+                columna.append(sum(Data1[i][j],Data2[i][j]))
             res.append(columna)
         return res
     else: return res
@@ -68,7 +68,7 @@ def ResM(Data1,Data2):
         for i in range(len(Data1)):
             columna=[]
             for j in range(len(Data1[i])):
-                columna.append(Bas.res(Data1[i][j],Data2[i][j]))
+                columna.append(res(Data1[i][j],Data2[i][j]))
             res.append(columna)
         return res
     else: return res
@@ -78,7 +78,7 @@ def InvM(Data1):
     for i in range(len(Data1)):
         columna=[]
         for j in range(len(Data1[i])):
-            columna.append(Bas.pro(Data1[i][j],(-1,0)))
+            columna.append(pro(Data1[i][j],(-1,0)))
         res.append(columna)
     return res
 
@@ -87,7 +87,7 @@ def eMat(Escalar,Data1):
     for i in range(len(Data1)):
         columna=[]
         for j in range(len(Data1[i])):
-            columna.append(Bas.pro(Data1[i][j],Escalar))
+            columna.append(pro(Data1[i][j],Escalar))
         res.append(columna)
     return res
 
@@ -105,6 +105,6 @@ def ConjM(Data1):
     for i in range(len(Data1)):
         columna=[]
         for j in range(len(Data1[i])):
-            columna.append(Bas.conj(Data1[i][j]))
+            columna.append(conj(Data1[i][j]))
         res.append(columna)
     return res
