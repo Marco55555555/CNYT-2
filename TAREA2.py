@@ -112,7 +112,7 @@ def AdjM(Data1):
     for i in range(len(Data1)):
         columna = []
         for j in range(len(Data1[i])):
-            columna.append(.conj(Data1[j][i]))
+            columna.append(conj(Data1[j][i]))
         res.append(columna)
     return res
 
