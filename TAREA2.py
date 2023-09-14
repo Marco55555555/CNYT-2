@@ -169,10 +169,66 @@ def DisV(Data1,Data2):
     d = 0
     for j in range(len(res)):
         d += mod(res[j])
+############################################33
+def Unit(Data1):
+    res = AdjM(Data1)
+    Un = []
+    for i in range(len(Data1)):
+        col1 = []
+        for j in range (len(Data1[i])):
+            if i == j:
+                col1.append((1,0))
+            else: 
+                col1.append((0,0))
+        Un.append(col1)
+    res = MulM(res,Data1)
+    if res == Un:return True
+    else:return False
 
+def Herm(Data1):
+    res = AdjM(Data1)
+    if(res==Data1):return True
+    else:return False
+    
+def Prot(Data1,Data2):
+    res=[]
+    if(type(Data1[0])==list):
+        for i in Data1:
+            for j in i:
+                if (type(Data2[0])==list):
+                    res.append(eMat(j,Data2))
+                else:
+                    res.append(eVec(j,Data2))
+    else:
+        for i in Data1:
+            if (type(Data2[0])==list):
+                res.append(eMat(i,Data2))
+            else:
+                res.append(eVec(i,Data2))
+    return res
+    
+def productoTensorV(c,d):
+    resultado=[]
+    for i in range (len(c)):
+        for j in range(len(d)):
+            r=c[i]*d[j]
+            resultado.append(r)
+    print(resultado)
+    return resultado
 
-
-
+def productoTensorM(a,b):  
+    n=len(b)
+    n2=len(b[0])
+    m=len(a)
+    m2=len(a[0])
+    t=n*m
+    t2=n2*m2
+    r=[[0 for i in range (t)]for j in range (t2)]
+    for i in range(t2):
+        for j in range(t):
+            r[i][j]=a[j//n][j//n2]*b[j%n][j%n2]
+    print(r)
+    return r
 
 
 
