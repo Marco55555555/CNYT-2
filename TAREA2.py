@@ -190,23 +190,6 @@ def Herm(Data1):
     if(res==Data1):return True
     else:return False
     
-def Prot(Data1,Data2):
-    res=[]
-    if(type(Data1[0])==list):
-        for i in Data1:
-            for j in i:
-                if (type(Data2[0])==list):
-                    res.append(eMat(j,Data2))
-                else:
-                    res.append(eVec(j,Data2))
-    else:
-        for i in Data1:
-            if (type(Data2[0])==list):
-                res.append(eMat(i,Data2))
-            else:
-                res.append(eVec(i,Data2))
-    return res
-    
 def productoTensorV(c,d):
     resultado=[]
     for i in range (len(c)):
